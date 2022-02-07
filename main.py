@@ -17,8 +17,8 @@ def notify(value):
 
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        to="+2347011960234", 
-        from_="+19087749853",
+        to= os.environ['TO_PHONE_NUMBER'], 
+        from_= os.environ['FROM_PHONE_NUMBER'],
         body= f"Stock value is now {value}")
     print(message.sid)
   else: 
